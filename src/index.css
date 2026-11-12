@@ -1,0 +1,344 @@
+@import "tailwindcss";
+
+@theme {
+  /* Stripe Colors */
+  --color-indigo-ink: #533afd;
+  --color-indigo-hover: #7389ff;
+  --color-midnight-ink: #061b31;
+  --color-slate: #64748d;
+  --color-steel: #50617a;
+  --color-smoke: #839bc8;
+  --color-pure-white: #ffffff;
+  --color-mist: #f8fafd;
+  --color-frost: #e5edf5;
+  --color-lavender-border: #b9b9f9;
+  --color-lilac-border: #d6d9fc;
+  --color-periwinkle-wash: #e8e9ff;
+  --color-deep-violet: #182659;
+  --color-amethyst-edge: #7f71e6;
+
+  /* Typography */
+  --font-sohne-var: 'Inter Tight', 'sohne-var', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Typography — Scale */
+  --text-caption: 12px;
+  --leading-caption: 1.45;
+  --tracking-caption: -0.12px;
+  --text-body-sm: 14px;
+  --leading-body-sm: 1.4;
+  --tracking-body-sm: -0.14px;
+  --text-body: 16px;
+  --leading-body: 1.2;
+  --tracking-body: -0.16px;
+  --text-body-lg: 20px;
+  --leading-body-lg: 1.4;
+  --tracking-body-lg: -0.2px;
+  --text-subheading: 22px;
+  --leading-subheading: 1.1;
+  --tracking-subheading: -0.22px;
+  --text-heading-sm: 26px;
+  --leading-heading-sm: 1.12;
+  --tracking-heading-sm: -0.26px;
+  --text-heading: 32px;
+  --leading-heading: 1.1;
+  --tracking-heading: -0.64px;
+  --text-heading-lg: 48px;
+  --leading-heading-lg: 1.03;
+  --tracking-heading-lg: -0.96px;
+  --text-display: 56px;
+  --leading-display: 1.03;
+  --tracking-display: -1.4px;
+
+  /* Spacing */
+  --spacing-8: 8px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-80: 80px;
+  --spacing-96: 96px;
+
+  /* Border Radius */
+  --radius-md: 4px;
+}
+
+@layer base {
+  :root {
+    --color-indigo-ink: #533afd;
+    --color-indigo-hover: #7389ff;
+    --color-midnight-ink: #061b31;
+    --color-slate: #64748d;
+    --color-steel: #50617a;
+    --color-smoke: #839bc8;
+    --color-pure-white: #ffffff;
+    --color-mist: #f8fafd;
+    --color-frost: #e5edf5;
+    --color-lavender-border: #b9b9f9;
+    --color-lilac-border: #d6d9fc;
+    --color-periwinkle-wash: #e8e9ff;
+    --color-deep-violet: #182659;
+    --color-amethyst-edge: #7f71e6;
+
+    --font-sohne-var: 'Inter Tight', 'sohne-var', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sohne-var);
+    color: var(--color-midnight-ink);
+    background-color: #f8fafd;
+    font-feature-settings: "ss01" on, "tnum" on;
+    letter-spacing: -0.01em;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Stripe signature: weight 300 headlines with aggressive tightening */
+  h1, h2, h3, h4, .font-heading, .stripe-heading {
+    font-family: var(--font-sohne-var);
+    font-weight: 300;
+    color: #061b31;
+    letter-spacing: -0.02em;
+    font-feature-settings: "ss01" on, "tnum" on;
+  }
+
+  .price-tag, .stat-value {
+    font-family: var(--font-sohne-var);
+    font-feature-settings: "ss01" on, "tnum" on;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Stripe Component Classes — No shadows, 4px radius, hairline borders */
+.stripe-card {
+  background-color: #ffffff;
+  border: 1px solid #e5edf5;
+  border-radius: 4px;
+  box-shadow: none !important;
+}
+
+.stripe-card-mist {
+  background-color: #f8fafd;
+  border: 1px solid #e5edf5;
+  border-radius: 4px;
+  box-shadow: none !important;
+}
+
+.stripe-card-lavender {
+  background-color: #e8e9ff;
+  border: 1px solid #b9b9f9;
+  border-radius: 4px;
+  box-shadow: none !important;
+}
+
+/* Primary Filled Button: #533afd bg, #ffffff text, 4px radius, no shadow */
+.stripe-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #533afd;
+  color: #ffffff;
+  font-family: var(--font-sohne-var);
+  font-weight: 400;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  box-shadow: none !important;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+}
+
+.stripe-btn-primary:hover {
+  background-color: #7389ff;
+}
+
+.stripe-btn-primary:active {
+  background-color: #432de0;
+  transform: translateY(0);
+}
+
+/* Ghost Outline Button: transparent bg, #533afd text, 1px #b9b9f9 border, 4px radius */
+.stripe-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: #533afd;
+  font-family: var(--font-sohne-var);
+  font-weight: 400;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #b9b9f9;
+  box-shadow: none !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+}
+
+.stripe-btn-ghost:hover {
+  background-color: #f8fafd;
+  border-color: #533afd;
+}
+
+.stripe-btn-ghost:active {
+  background-color: #e8e9ff;
+}
+
+/* Tertiary Outline Button: 1px solid #d6d9fc */
+.stripe-btn-tertiary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: #533afd;
+  font-family: var(--font-sohne-var);
+  font-weight: 400;
+  font-size: 13px;
+  border-radius: 4px;
+  border: 1px solid #d6d9fc;
+  box-shadow: none !important;
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+}
+
+.stripe-btn-tertiary:hover {
+  background-color: #f8fafd;
+}
+
+/* Danger Button: Subtle red tint with 1px border */
+.stripe-btn-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff1f2;
+  color: #e11d48;
+  font-family: var(--font-sohne-var);
+  font-weight: 400;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #fecdd3;
+  box-shadow: none !important;
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+}
+
+.stripe-btn-danger:hover {
+  background-color: #ffe4e6;
+}
+
+/* Inputs: 4px radius, 1px frost border, no shadow */
+.stripe-input {
+  border: 1px solid #e5edf5;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #061b31;
+  font-size: 14px;
+  outline: none;
+  box-shadow: none !important;
+  transition: border-color 0.15s ease;
+}
+
+.stripe-input:focus {
+  border-color: #533afd;
+}
+
+/* Badges & Tags */
+.stripe-tag-indigo {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  background-color: #e8e9ff;
+  color: #533afd;
+  border: 1px solid #d6d9fc;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.stripe-tag-neutral {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  background-color: #f8fafd;
+  color: #50617a;
+  border: 1px solid #e5edf5;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.stripe-tag-dark {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  background-color: #061b31;
+  color: #ffffff;
+  border: 1px solid #061b31;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Nele introduction — Figma frames 412 × 917. */
+.nele-intro {
+  position: relative;
+  isolation: isolate;
+  container-type: inline-size;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  font-family: 'Inter', sans-serif;
+  color: #000;
+  letter-spacing: 0;
+}
+.nele-intro-background { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.nele-intro-background img { position: absolute; max-width: none; }
+.nele-glow { width: 257.039cqw; height: 252.67cqw; }
+.nele-glow--one { left: -88.107cqw; top: -60.437cqw; }
+.nele-glow--two { left: -80.825cqw; top: -88.592cqw; }
+.nele-blue-glow { width: 231.068cqw; height: 226.699cqw; left: -95.631cqw; top: -96.117cqw; }
+.nele-onboarding-gradient { width: 271.845cqw; height: 288.35cqw; left: -95.631cqw; top: -96.117cqw; }
+.nele-intro-status { height: 52px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; font-weight: 500; color: #1d1b20; }
+.nele-intro-camera { position: absolute; left: 50%; top: 18px; transform: translateX(-50%); width: 24px; height: 24px; border-radius: 50%; background: #1d1b20; }
+.nele-intro-signals { display: flex; gap: 2px; align-items: center; }
+.nele-intro-signals svg { width: 16px; height: 16px; }
+.nele-intro-signals svg:first-child { opacity: .2; fill: currentColor; stroke-width: 0; }
+.nele-intro-signals svg:nth-child(2) { fill: currentColor; }
+.nele-intro-signals svg:last-child { transform: rotate(-90deg); width: 14px; }
+.nele-splash-logo { position: absolute; left: calc(50% + .121cqw); top: 50.0545%; transform: translate(-50%, -50%); width: 29.854cqw; height: 29.126cqw; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.nele-splash-logo img { width: 100%; height: 100%; }
+.nele-intro-progress { position: absolute; left: 8.495%; right: 7.767%; top: 8.506%; height: 6px; display: flex; border-radius: 4px; background: #fff; }
+.nele-intro-progress button { position: relative; flex: 1; border: 0; padding: 0; background: transparent; cursor: pointer; }
+.nele-intro-progress button::before { content: ''; position: absolute; inset: -10px 0; }
+.nele-intro-progress button:first-child { border-radius: 4px 0 0 4px; }
+.nele-intro-progress button:last-child { border-radius: 0 4px 4px 0; }
+.nele-intro-progress button.is-complete { background: #000; }
+.nele-intro-copy { position: absolute; left: 8.495%; right: 7.767%; top: 67.939%; }
+.nele-intro-copy h1 { margin: 0; color: #000; font-family: 'Inter', sans-serif; font-size: 7.282cqw; font-weight: 500; line-height: 1.2; letter-spacing: -.2913cqw; }
+.nele-intro-copy p { margin: 16px 0 0; color: #7d7d7d; font-size: 4.369cqw; font-weight: 400; line-height: 1.2222; letter-spacing: 0; }
+.nele-intro-copy--first { top: 68.484%; }
+.nele-intro-copy--first h1 { margin-left: -1px; }
+.nele-intro-copy--first p { margin-top: 11px; }
+.nele-intro-continue { position: absolute; left: 8.495%; right: 7.767%; top: 87.677%; min-height: 43px; padding: 8px 4px; border: 0; border-radius: 4px; background: #533afd; color: #fff; font-family: 'Inter', sans-serif; font-size: 5.34cqw; font-weight: 500; line-height: 27px; letter-spacing: -.2136cqw; cursor: pointer; }
+.nele-intro-continue:hover { background: #4830ec; }
+.nele-intro-continue:active { background: #3d26d8; }
+.nele-intro button:focus-visible { outline: 2px solid #1d1b20; outline-offset: 4px; }
+@media (max-width: 639px) {
+  .nele-intro-shell { height: 100dvh !important; max-width: 100% !important; }
+}

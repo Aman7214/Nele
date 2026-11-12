@@ -1,0 +1,6 @@
+{
+  "name": "NELE - No Broker Real Estate",
+  "description": "Mobile-first real estate marketplace to buy, sell, and rent plots, houses, flats, and shops directly from owners with zero broker fees in Raichur district.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
